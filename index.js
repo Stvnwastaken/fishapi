@@ -3,6 +3,7 @@ const cors = require('cors')
 const cheerio = require('cheerio')
 const bodyParser = require('body-parser')
 const axios = require('axios')
+const path = require('path')
 const app = express()
 
 app.use(bodyParser.json())
@@ -92,6 +93,10 @@ const scrape = async () => {
         }
     })
 }
+
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'index.html'))
+})
 
 app.get('/shasta', async (req, res) => {
     let data = await shastaScrape()
