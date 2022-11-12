@@ -8,6 +8,7 @@ Currently there are **2** endpoints
 method: get
 returns: array holding arrays of string(stocking time)
 
+```js
 example: fetch('./shasta').then((res) => {
 let times = []
   let data = res.json()
@@ -15,13 +16,14 @@ let times = []
     time = time.join()
     times.push(time)
   })
-})
+})```
 
 ``` /fishwebscrape```
 
 method: get
 returns: array of objects(contain county, lake, fish)
 
+```js
 example: fetch('./fishwebscrape').then((res) => {
   let data = res.json()
   data.fishD.forEach(fishObj => {
@@ -29,7 +31,7 @@ example: fetch('./fishwebscrape').then((res) => {
     handleL(fishObj.lake)
     handleF(fishObj.fish)
   })
-})
+})```
 
 
 ### Note that this is absolute trash and it even mixes up lakes and fish sorry about trash code and docs but whatever
