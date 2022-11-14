@@ -1,5 +1,6 @@
 # The fish api that scrapes multiple websites to find out the stocking schedule of fish in california
 
+### Im sorry but idgaf about making a frontend cuz im lazy and you can do it instead
 
 Currently there are **2** endpoints
 
