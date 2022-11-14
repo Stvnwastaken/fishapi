@@ -9,6 +9,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
+app.use('/', express.static(path.join(__dirname + '/public')))
 
 const shastaScrape = async () => {
     return await axios('https://www.dfg.ca.gov/m/FishPlantings/Details?county=Shasta&water=Shasta%20Lake').then((res) => {
@@ -93,10 +94,6 @@ const scrape = async () => {
         }
     })
 }
-
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'index.html'))
-})
 
 app.get('/shasta', async (req, res) => {
     let data = await shastaScrape()
