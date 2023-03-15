@@ -40,3 +40,5 @@ example: fetch('./fishwebscrape').then((res) => {
 
 
 ### Note that this is absolute trash and it even mixes up lakes and fish sorry about trash code and docs but whatever
+
+# I will one day come back to this and improve it...
